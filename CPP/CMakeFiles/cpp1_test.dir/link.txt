@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/cpp1_test.dir/test.cc.o CMakeFiles/cpp1_test.dir/__/__/Logger.cc.o -o cpp1_test 

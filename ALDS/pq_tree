@@ -1,0 +1,10 @@
+digraph {
+	"5:call,ping" [label="5
+['call', 'ping']"]
+	5:"call,ping" -> 3:email [label=L]
+	"3:email" [label="3
+['email']"]
+	5:"call,ping" -> 7:sms [label=R]
+	"7:sms" [label="7
+['sms']"]
+}
