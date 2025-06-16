@@ -1,14 +1,17 @@
-FROM mcr.microsoft.com/devcontainers/base:ubuntu
+FROM ubuntu:22.04
 
-# Installeer C++ tools
-RUN apt-get update && apt-get install -y \
-    cmake \
-    gcc \
-    g++ \
-    make \
-    gdb \
-    libopencv-dev \
-    python3-pip \
-    python3-venv \
-    libgl1-mesa-glx \
- && apt-get clean
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        cmake \
+        gcc \
+        g++ \
+        make \
+        gdb \
+        libopencv-dev \
+        python3-pip \
+        python3-venv \
+        libgl1-mesa-glx && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
