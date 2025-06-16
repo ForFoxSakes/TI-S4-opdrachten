@@ -1,3 +1,15 @@
+Assignment 1 : 
+
+
+![Alt text](learning_curves.png)
+
+
+Assigment 2 : 
+Mini Onderzoek : 
+
+Assigment 3 / 4 : `
+
+````
 import torch
 import torchvision
 import numpy as np
@@ -226,3 +238,4 @@ De modellen met een extra verborgen laag (de v2-versies) presteerden over het al
 
 Op basis van de learning curves zag ik duidelijk wanneer overfitting begon: de training loss bleef dalen, maar de test loss liep op. De SimpleCNNv2 bood in veel gevallen het beste compromis tussen nauwkeurigheid en generalisatie.
 '''
+````
