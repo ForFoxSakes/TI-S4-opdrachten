@@ -14,8 +14,8 @@ int main() {
      std::ifstream file("opdrachten/cpp1/dracula.txt");
      if (!file) {
          std::cerr << "Kon het bestand niet openen: dracula.txt" << std::endl;
-         return 1;
-     }
+         return 1
+    }
      
      std::cout << "Bestand succesvol geopend!" << std::endl;
     
@@ -78,7 +78,7 @@ int main() {
     std::string word;
     
     while (file >> word) {
-        // Verwijder leestekens aan begin en einde van woorden
+        
         while (!word.empty() && std::ispunct(word.front())) {
             word.erase(0, 1);
         }

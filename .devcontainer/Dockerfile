@@ -11,4 +11,4 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-venv \
     libgl1-mesa-glx \
-    && apt-get clean
+ && apt-get clean

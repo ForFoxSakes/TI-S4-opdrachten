@@ -208,21 +208,26 @@ SimpleCNN met 8 filters
 
 LargeCNN met 32 filters
 
-Deze modellen bestaan uit één convolutionele laag, gevolgd door een poolinglaag, flattening, en een volledig verbonden laag van 10 outputs (voor de 10 cijferklassen).
+Deze modellen bestaan uit één convolutionele laag, gevolgd door een poolinglaag, flattening, en een volledig verbonden laag van 10 outputs.
 
-Daarna heb ik van elk model ook een versie gemaakt met een extra verborgen laag van 128 neuronen, om te onderzoeken hoe dit de prestaties beïnvloedt. Deze nieuwe versies heb ik SmallCNNv2, SimpleCNNv2 en LargeCNNv2 genoemd.
+Daarna heb ik van elk model ook een versie gemaakt met een extra verborgen laag van 128 neuronen, om te onderzoeken hoe dit de prestaties beïnvloedt. 
+Deze nieuwe versies heb ik SmallCNNv2, SimpleCNNv2 en LargeCNNv2 genoemd.
 
 Training en evaluatie
-Alle modellen zijn 20 epochs getraind met de Adam-optimizer en CrossEntropyLoss. Tijdens de training heb ik zowel de train loss als de test loss bijgehouden, om later learning curves te kunnen plotten. Deze curves geven inzicht in hoe goed het model leert, en of er sprake is van overfitting.
+Alle modellen zijn 20 epochs getraind met de Adam-optimizer en CrossEntropyLoss. 
+Tijdens de training heb ik zowel de train loss als de test loss bijgehouden, om later learning curves te kunnen plotten. Deze curves geven inzicht in hoe goed het model leert, en of er sprake is van overfitting.
 
-Daarnaast heb ik per model een confusion matrix laten genereren om te zien waar het model fouten maakt. Ook heb ik van elk model tien fout geclassificeerde voorbeelden opgeslagen als afbeeldingen, zodat ik de aard van de fouten kon analyseren.
+Daarnaast heb ik per model een confusion matrix laten genereren om te zien waar het model fouten maakt. 
+Ook heb ik van elk model tien fout geclassificeerde voorbeelden opgeslagen als afbeeldingen, zodat ik de aard van de fouten kon analyseren.
 
 Resultaten en observaties
 SmallCNN had het minste aantal parameters, leerde stabiel, maar had lagere nauwkeurigheid.
 
 LargeCNN leerde snel en had hoge nauwkeurigheid, maar vertoonde sneller overfitting.
 
-De modellen met een extra verborgen laag (de v2-versies) presteerden over het algemeen beter dan de basisversies, met name in het geval van SimpleCNNv2. De extra laag hielp om complexere patronen te leren zonder direct overfit te raken.
+De modellen met een extra verborgen laag (de v2-versies) presteerden over het algemeen beter dan de basisversies, met name in het geval van SimpleCNNv2. 
+De extra laag hielp om complexere patronen te leren zonder direct overfit te raken.
 
-Op basis van de learning curves zag ik duidelijk wanneer overfitting begon: de training loss bleef dalen, maar de test loss liep op. De SimpleCNNv2 bood in veel gevallen het beste compromis tussen nauwkeurigheid en generalisatie.
+Op basis van de learning curves zag ik duidelijk wanneer overfitting begon: de training loss bleef dalen, maar de test loss liep op. 
+De SimpleCNNv2 bood in veel gevallen het beste compromis tussen nauwkeurigheid en generalisatie.
 '''
