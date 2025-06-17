@@ -9,6 +9,12 @@
 #include <sstream>
 #include <filesystem>
 
+
+bool sorteerOpFrequentie(std::pair<std::string, int> a, std::pair<std::string, int> b) {
+         return a.second > b.second;
+     }
+
+
 int main() {
 
      std::ifstream file("opdrachten/cpp1/dracula.txt");
@@ -98,12 +104,10 @@ int main() {
     
     // Maak een vector van de map voor sortering op frequentie
     std::vector<std::pair<std::string, int>> wordFreqVec(wordFrequency.begin(), wordFrequency.end());
+
+     
+     std::sort(wordFreqVec.begin(), wordFreqVec.end(), sorteerOpFrequentie);
     
-    // Sorteer op frequentie (van hoog naar laag)
-    std::sort(wordFreqVec.begin(), wordFreqVec.end(),
-             [](const std::pair<std::string, int>& a, const std::pair<std::string, int>& b) {
-                 return a.second > b.second;
-             });
     
     // Druk de 10 meest voorkomende woorden af
     std::cout << "\nTop 10 meest voorkomende woorden:" << std::endl;
