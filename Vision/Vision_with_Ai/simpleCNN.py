@@ -9,6 +9,8 @@ from torch import nn
 from sklearn.metrics import confusion_matrix
 
 # Verschillende CNN-modellen met kleine/grote netwerken en met/zonder hidden layer
+
+# 4 convolutionele output channels, 3x3 kernel, padding=1
 class SmallCNN(nn.Module):
     def __init__(self):
         super().__init__()
@@ -20,6 +22,11 @@ class SmallCNN(nn.Module):
         x = self.pool(torch.relu(self.conv1(x)))
         x = x.view(-1, 4 * 14 * 14)
         return self.fc1(x)
+
+
+# 8 Convolutionele output channels  # 3x3 kernel, padding=1
+# Deze versie is iets groter dan SmallCNN
+# en heeft meer filters, wat kan helpen bij het leren van complexere patronen.
 
 class SimpleCNN(nn.Module):
     def __init__(self):
@@ -33,6 +40,10 @@ class SimpleCNN(nn.Module):
         x = x.view(-1, 8 * 14 * 14)
         return self.fc1(x)
 
+# 4 convolutionele output channels, 3x3 kernel, padding=1
+# Deze versie heeft een hidden layer
+# Dit kan helpen om complexere relaties in de data te leren.
+# Het model is iets groter dan SmallCNN,
 class SmallCNNv2(nn.Module):
     def __init__(self):
         super().__init__()
@@ -48,6 +59,9 @@ class SmallCNNv2(nn.Module):
         x = self.relu(self.fc1(x))
         return self.fc2(x)
 
+# 8 Convolutionele output channels, 3x3 kernel, padding=1
+# Deze versie heeft ook een hidden layer
+# Dit model is iets groter dan SimpleCNN en kan complexere patronen leren.  
 class SimpleCNNv2(nn.Module):
     def __init__(self):
         super().__init__()
