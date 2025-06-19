@@ -1,0 +1,3 @@
+/workspaces/TI-S4-opdrachten/CPP/build/CMakeFiles/opdracht1.dir
+/workspaces/TI-S4-opdrachten/CPP/build/CMakeFiles/edit_cache.dir
+/workspaces/TI-S4-opdrachten/CPP/build/CMakeFiles/rebuild_cache.dir

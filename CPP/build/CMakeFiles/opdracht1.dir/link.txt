@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/opdracht1.dir/opdracht1.cc.o -o opdracht1 

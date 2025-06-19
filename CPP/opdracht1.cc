@@ -17,7 +17,7 @@ bool sorteerOpFrequentie(std::pair<std::string, int> a, std::pair<std::string, i
 
 int main() {
 
-     std::ifstream file("opdrachten/cpp1/dracula.txt");
+     std::ifstream file("dracula.txt");
      if (!file) {
          std::cerr << "Kon het bestand niet openen: dracula.txt" << std::endl;
          return 1;
@@ -52,8 +52,7 @@ int main() {
               << (onlyLettersAndPunctuation ? "Ja" : "Nee") << std::endl;
     
 
-    std::transform(characters.begin(), characters.end(), characters.begin(),
-                  [](char c) { return std::tolower(c); });
+    std::transform(characters.begin(), characters.end(), characters.begin(),std::tolower);
     
     std::map<char, int> letterFrequency;
     for (char c = 'a'; c <= 'z'; ++c) {

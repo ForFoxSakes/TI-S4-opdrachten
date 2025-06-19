@@ -1,17 +1,9 @@
-add_executable(cpp1
-    ../../Logger.cc
-)
+cmake_minimum_required(VERSION 3.10)
 
-find_package(TinyXML2 REQUIRED)
+project(Opdracht1)
 
-# Voeg de TinyXML2 bibliotheek expliciet toe aan de link-directives
-target_link_libraries(cpp1 PRIVATE ${TinyXML2_LIBRARIES})
-target_include_directories(cpp1 PRIVATE ${TinyXML2_INCLUDE_DIRS})
-# Kopieer dracula.txt naar de build directory
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/dracula.txt ${CMAKE_CURRENT_BINARY_DIR}/dracula.txt COPYONLY)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    target_compile_definitions(cpp1 PRIVATE ENABLE_LOGGING)
-endif()
-
-target_include_directories(cpp1 PRIVATE ../../)
+# Bouw een uitvoerbaar programma van je code
+add_executable(opdracht1 opdracht1.cc)
