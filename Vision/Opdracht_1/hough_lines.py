@@ -42,8 +42,6 @@ if lines is not None:
         cv2.line(output, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
 
-
-
 # Show result
 cv2.imshow('Hough Lines', output)
 cv2.waitKey(0)

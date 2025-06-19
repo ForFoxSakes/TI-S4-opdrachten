@@ -22,7 +22,9 @@ edge_detection =cv2.filter2D(sharpened, -1, edge_detection_kernel)
 blur = cv2.filter2D(edge_detection, -1, blur_kernel)
 
 
-# Display the original and processed images
+# Show images tijdens processing stappen voor debugging
+
+
 #cv2.imshow("Sharpened, Edge Detection, Blur", np.concatenate((sharpened, edge_detection,blur), axis=1))
 
 # Display horror filter
